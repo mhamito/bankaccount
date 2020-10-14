@@ -30,7 +30,7 @@ public class BankAccountStepDef {
     }
 
     @Then("I should be told {string}")
-    public void iShouldBeTold(String arg0) {
+    public void iShouldBeTold(String errorMessage) {
         Assertions.assertEquals(errorMessage, this.errorMessage);
     }
 
