@@ -38,8 +38,8 @@ public class Account {
         accountStatements.add(new AccountStatement(operationType, LocalDateTime.now(), amount, new Amount(this.balance.getCurrentAmount())));
     }
 
-    public Double getBalance() {
-        return this.balance.getCurrentAmount() ;
+    public Amount getBalance() {
+        return this.balance;
     }
 
     public List<AccountStatement> getAccountStatements() { return this.accountStatements; }

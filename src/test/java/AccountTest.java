@@ -13,7 +13,7 @@ public class AccountTest {
         account = new Account(client);
         account.deposit(new Amount(300.0));
         account.deposit(new Amount(200.0));
-        Assertions.assertEquals(500.0, account.getBalance());
+        Assertions.assertEquals(500.0, account.getBalance().getCurrentAmount());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class AccountTest {
         account.deposit(new Amount(2000.0));
         account.withdrawal(new Amount(400.0));
         account.withdrawal(new Amount(600.0));
-        Assertions.assertEquals(1000.00, account.getBalance());
+        Assertions.assertEquals(1000.00, account.getBalance().getCurrentAmount());
     }
 
     @Test
@@ -70,10 +70,10 @@ public class AccountTest {
         account.withdrawal(new Amount(500.0));
 
         Assertions.assertEquals(account.getAccountStatements().size(), 4);
-        Assertions.assertEquals(Double.valueOf(account.getAccountStatements().get(0).getBalance().toString()), 4000.00);
-        Assertions.assertEquals(Double.valueOf(account.getAccountStatements().get(1).getBalance().toString()), 2800.00);
-        Assertions.assertEquals(Double.valueOf(account.getAccountStatements().get(2).getBalance().toString()), 3200.00);
-        Assertions.assertEquals(Double.valueOf(account.getAccountStatements().get(3).getBalance().toString()), 2700.00);
+        Assertions.assertEquals(account.getAccountStatements().get(0).getBalance().getCurrentAmount(), 4000.00);
+        Assertions.assertEquals(account.getAccountStatements().get(1).getBalance().getCurrentAmount(), 2800.00);
+        Assertions.assertEquals(account.getAccountStatements().get(2).getBalance().getCurrentAmount(), 3200.00);
+        Assertions.assertEquals(account.getAccountStatements().get(3).getBalance().getCurrentAmount(), 2700.00);
     }
 
 }
