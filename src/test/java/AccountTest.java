@@ -60,4 +60,19 @@ public class AccountTest {
         Assertions.assertEquals(amountIncorrectMessage, errorMessage);
     }
 
+    @Test
+    public void should_save_all_account_statements () {
+        account = new Account();
+        account.deposit(new Amount(4000.0));
+        account.withdrawal(new Amount(1200.0));
+        account.deposit(new Amount(400.0));
+        account.withdrawal(new Amount(500.0));
+
+        Assertions.assertEquals(account.getAccountStatements().size(), 4);
+        Assertions.assertEquals(account.getAccountStatements().get(0).getBalance(), 4000.00);
+        Assertions.assertEquals(account.getAccountStatements().get(1).getBalance(), 2800.00);
+        Assertions.assertEquals(account.getAccountStatements().get(2).getBalance(), 3200.00);
+        Assertions.assertEquals(account.getAccountStatements().get(3).getBalance(), 2700.00);
+    }
+
 }
