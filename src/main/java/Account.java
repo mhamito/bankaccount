@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Account {
 
     private Amount balance;
+    private final AmountValidation amountValidation = AmountValidation.getInstance();
 
     public Account() {
         this.balance = new Amount();
@@ -14,6 +15,7 @@ public class Account {
      * @param amount the amount that i want deposit
      */
     public void deposit(Amount amount) {
+        amountValidation.checkIfAmountIsNegativeOrNull(amount);
         this.balance.add(amount);
     }
 
