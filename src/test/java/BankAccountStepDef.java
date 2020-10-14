@@ -50,4 +50,8 @@ public class BankAccountStepDef {
     }
 
 
+    @When("I try withdrawal an amount greater then my balance from my account")
+    public void iTryWithdrawalAnAmountGreaterThenMyBalanceFromMyAccount() {
+        errorMessage = Assertions.assertThrows(RuntimeException.class, () -> account.withdrawal(new Amount(1500.0))).getMessage();
+    }
 }

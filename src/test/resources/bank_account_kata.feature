@@ -20,3 +20,8 @@ Feature: Bank account kata
     Given I have some money in my account
     When I try withdrawal a negative amount from my account
     Then I should be told "Your amount is incorrect"
+
+  Scenario: withdrawal an amount greater then my balance from my account
+    Given I have some money in my account
+    When I try withdrawal an amount greater then my balance from my account
+    Then I should be told "Your amount is greater then your balance"
