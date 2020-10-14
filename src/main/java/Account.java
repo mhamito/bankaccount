@@ -1,9 +1,15 @@
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Account {
 
+    private final List<AccountStatement> accountStatements;
     private Amount balance;
     private final AmountValidation amountValidation = AmountValidation.getInstance();
 
     public Account() {
+        this.accountStatements = new ArrayList<>();
         this.balance = new Amount();
     }
 
@@ -13,7 +19,9 @@ public class Account {
      */
     public void deposit(Amount amount) {
         amountValidation.checkIfAmountIsNegative(amount.getCurrentAmount());
+        OperationType operationType = OperationType.DEPOSIT;
         this.balance.add(amount);
+        accountStatements.add(new AccountStatement(operationType, LocalDateTime.now(), amount.getCurrentAmount(), this.balance.getCurrentAmount()));
     }
 
     /**
@@ -23,10 +31,14 @@ public class Account {
     public void withdrawal(Amount amount) {
         amountValidation.checkIfAmountIsNegative(amount.getCurrentAmount());
         amountValidation.checkIfBalanceIsSufficient(balance.getCurrentAmount(), amount.getCurrentAmount());
+        OperationType operationType = OperationType.WITHDRAWAL;
         this.balance.subtract(amount);
+        accountStatements.add(new AccountStatement(operationType, LocalDateTime.now(), amount.getCurrentAmount(), this.balance.getCurrentAmount()));
     }
 
     public Double getBalance() {
         return this.balance.getCurrentAmount() ;
     }
+
+    public List<AccountStatement> getAccountStatements() { return this.accountStatements; }
 }
