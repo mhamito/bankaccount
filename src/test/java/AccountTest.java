@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 public class AccountTest {
 
     private Account account;
-    private static String amountIncorrectMessage = AmountValidation.AMOUNT_INCORRECT_MESSAGE;
-    private static String amountGreaterThenBalanceMessage = AmountValidation.AMOUNT_GREATER_THEN_BALANCE_MESSAGE;
+    private static final String amountIncorrectMessage = AmountValidation.AMOUNT_INCORRECT_MESSAGE;
+    private static final String amountGreaterThenBalanceMessage = AmountValidation.AMOUNT_GREATER_THEN_BALANCE_MESSAGE;
 
     @Test
     public void should_have_five_hundred_in_my_amount_when_deposit_three_hundred_and_two_hundred() {

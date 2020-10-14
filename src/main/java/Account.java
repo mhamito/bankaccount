@@ -5,7 +5,7 @@ import java.util.List;
 public class Account {
 
     private final List<AccountStatement> accountStatements;
-    private Amount balance;
+    private final Amount balance;
     private final AmountValidation amountValidation = AmountValidation.getInstance();
 
     public Account() {
