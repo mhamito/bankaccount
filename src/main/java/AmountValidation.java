@@ -9,7 +9,7 @@ public class AmountValidation {
     }
 
     /**
-     * check if the amount that i want deposit in my account is negative
+     * check if the amount that i want deposit or withdrawal from my account is negative
      * @param money the amount that i want deposit in my account
      */
     public void checkIfAmountIsNegative(double money) {
@@ -19,7 +19,7 @@ public class AmountValidation {
     }
 
     /**
-     * check if the amount that i want withdrawal from my account is greater then my balance
+     * check if the amount that i want deposit or withdrawal from my account is greater then my balance
      * @param currentAmount the balance of my account
      * @param money the amount that i want deposit or withdrawal from my account
      */
