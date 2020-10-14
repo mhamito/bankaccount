@@ -22,6 +22,7 @@ public class Account {
      */
     public void withdrawal(Amount amount) {
         amountValidation.checkIfAmountIsNegative(amount);
+        amountValidation.checkIfBalanceIsSufficient(amount, balance);
         this.balance.subtract(amount);
     }
 
