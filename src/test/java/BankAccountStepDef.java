@@ -43,4 +43,11 @@ public class BankAccountStepDef {
     public void myBalanceMustDecreaseByTheAmountDeposited() {
         Assertions.assertEquals(700.0, account.getBalance());
     }
+
+    @When("I try withdrawal a negative amount from my account")
+    public void iTryWithdrawalANegativeAmountFromMyAccount() {
+        errorMessage = Assertions.assertThrows(RuntimeException.class, () -> account.withdrawal(new Amount(-500.0))).getMessage();
+    }
+
+
 }
