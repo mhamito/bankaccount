@@ -13,7 +13,7 @@ public class AmountValidation {
      * @param money the amount that i want deposit in my account
      */
     public void checkIfAmountIsNegative(double money) {
-        if(money < 0) {
+        if(money <= 0) {
             throw new RuntimeException(AMOUNT_INCORRECT_MESSAGE);
         }
     }

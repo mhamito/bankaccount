@@ -46,4 +46,18 @@ public class AccountTest {
         Assertions.assertEquals(amountGreaterThenBalanceMessage, errorMessage);
     }
 
+    @Test
+    public void should_throw_exception_when_deposit_an_amount_with_sum_equal_to_zero(){
+        account = new Account();
+        String errorMessage = Assertions.assertThrows(RuntimeException.class, () -> account.deposit(new Amount(0.0))).getMessage();
+        Assertions.assertEquals(amountIncorrectMessage, errorMessage);
+    }
+
+    @Test
+    public void should_throw_exception_when_withdrawal_an_amount_with_sum_equal_to_zero(){
+        account = new Account();
+        String errorMessage = Assertions.assertThrows(RuntimeException.class, () -> account.withdrawal(new Amount(0.0))).getMessage();
+        Assertions.assertEquals(amountIncorrectMessage, errorMessage);
+    }
+
 }
