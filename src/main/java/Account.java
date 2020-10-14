@@ -14,10 +14,10 @@ public class Account {
      * @param amount the amount that i want deposit
      */
     public void deposit(Amount amount) {
-        this.balance.depositAmount(amount);
+        this.balance.add(amount);
     }
 
     public Double getBalance() {
-        return this.balance.getBalance();
+        return this.balance.getCurrentAmount() ;
     }
 }

@@ -8,7 +8,7 @@ public class Amount {
         this.currentAmount = money;
     }
 
-    public void depositAmount(Amount amount) { this.currentAmount += amount.getBalance(); }
+    public void add(Amount amount) { this.currentAmount += amount.getCurrentAmount(); }
 
-    public Double getBalance() { return this.currentAmount; }
+    public Double getCurrentAmount() { return this.currentAmount; }
 }
