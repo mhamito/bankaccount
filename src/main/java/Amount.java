@@ -1,8 +1,10 @@
 public class Amount {
 
-    private Double currentAmount = 0.0;
+    private Double currentAmount;
 
-    public Amount() {}
+    public Amount() {
+        this.currentAmount = 0.0;
+    }
 
     public Amount(Double money) {
         this.currentAmount = money;
