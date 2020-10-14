@@ -70,10 +70,10 @@ public class AccountTest {
         account.withdrawal(new Amount(500.0));
 
         Assertions.assertEquals(account.getAccountStatements().size(), 4);
-        Assertions.assertEquals(account.getAccountStatements().get(0).getBalance(), 4000.00);
-        Assertions.assertEquals(account.getAccountStatements().get(1).getBalance(), 2800.00);
-        Assertions.assertEquals(account.getAccountStatements().get(2).getBalance(), 3200.00);
-        Assertions.assertEquals(account.getAccountStatements().get(3).getBalance(), 2700.00);
+        Assertions.assertEquals(Double.valueOf(account.getAccountStatements().get(0).getBalance().toString()), 4000.00);
+        Assertions.assertEquals(Double.valueOf(account.getAccountStatements().get(1).getBalance().toString()), 2800.00);
+        Assertions.assertEquals(Double.valueOf(account.getAccountStatements().get(2).getBalance().toString()), 3200.00);
+        Assertions.assertEquals(Double.valueOf(account.getAccountStatements().get(3).getBalance().toString()), 2700.00);
     }
 
 }

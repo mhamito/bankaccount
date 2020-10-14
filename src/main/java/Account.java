@@ -23,7 +23,7 @@ public class Account {
         amountValidation.checkIfAmountIsNegative(amount);
         OperationType operationType = OperationType.DEPOSIT;
         this.balance.add(amount);
-        accountStatements.add(new AccountStatement(operationType, LocalDateTime.now(), amount.getCurrentAmount(), this.balance.getCurrentAmount()));
+        accountStatements.add(new AccountStatement(operationType, LocalDateTime.now(), amount, new Amount(this.balance.getCurrentAmount())));
     }
 
     /**
@@ -35,7 +35,7 @@ public class Account {
         amountValidation.checkIfBalanceIsSufficient(balance, amount);
         OperationType operationType = OperationType.WITHDRAWAL;
         this.balance.subtract(amount);
-        accountStatements.add(new AccountStatement(operationType, LocalDateTime.now(), amount.getCurrentAmount(), this.balance.getCurrentAmount()));
+        accountStatements.add(new AccountStatement(operationType, LocalDateTime.now(), amount, new Amount(this.balance.getCurrentAmount())));
     }
 
     public Double getBalance() {

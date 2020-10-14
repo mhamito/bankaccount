@@ -13,7 +13,7 @@ public class PrintStatements {
         List<AccountStatement> accountStatements = account.getAccountStatements();
         Collections.reverse(accountStatements);
         accountStatements.forEach(accountStatement -> {
-            System.out.println(accountStatement.getOperationType() + " | " + accountStatement.getDate() + " | " + decimalFormat.format(accountStatement.getAmount()) + " € | " + decimalFormat.format(accountStatement.getBalance()) + " €");
+            System.out.println(accountStatement.getOperationType() + " | " + accountStatement.getDate() + " | " + decimalFormat.format(Double.valueOf(accountStatement.getAmount().toString())) + " € | " + decimalFormat.format(Double.valueOf(accountStatement.getBalance().toString())) + " €");
         });
     }
 }

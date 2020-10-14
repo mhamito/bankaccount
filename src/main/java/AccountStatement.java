@@ -4,11 +4,11 @@ import java.time.format.DateTimeFormatter;
 public class AccountStatement {
     private final OperationType operationType;
     private final LocalDateTime operationDate;
-    private final double amount;
-    private final double balance;
+    private final Amount amount;
+    private final Amount balance;
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
-    public AccountStatement(OperationType operationType, LocalDateTime date, Double amount, Double balance){
+    public AccountStatement(OperationType operationType, LocalDateTime date, Amount amount, Amount balance){
         this.operationType = operationType;
         this.operationDate = date;
         this.amount = amount;
@@ -19,7 +19,7 @@ public class AccountStatement {
 
     public String getDate() { return formatter.format(this.operationDate); }
 
-    public Double getAmount() { return this.amount; }
+    public Amount getAmount() { return this.amount; }
 
-    public Double getBalance() { return this.balance; }
+    public Amount getBalance() { return this.balance; }
 }

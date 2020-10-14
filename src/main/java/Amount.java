@@ -15,4 +15,8 @@ public class Amount {
     public void subtract(Amount amount) { this.currentAmount -= amount.getCurrentAmount(); }
 
     public Double getCurrentAmount() { return this.currentAmount; }
+
+    public String toString() {
+        return String.valueOf(this.currentAmount);
+    }
 }
