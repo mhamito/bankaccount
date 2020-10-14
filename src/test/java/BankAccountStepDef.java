@@ -10,12 +10,12 @@ public class BankAccountStepDef {
     @Given("I have some money in my account")
     public void iHaveSomeMoneyInMyAccount() {
         account = new Account();
-        account.deposit(1000.0);
+        account.deposit(new Amount(1000.0));
     }
 
     @When("I deposit an amount in my account")
     public void iDepositAnAmountInMyAccount() {
-        account.deposit(500.0);
+        account.deposit(new Amount(500.0));
     }
 
     @Then("My balance must increase by the amount deposited")

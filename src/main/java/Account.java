@@ -3,20 +3,21 @@ import java.util.ArrayList;
 
 public class Account {
 
-    private Double balance = 0.0;
+    private Amount balance;
 
     public Account() {
+        this.balance = new Amount();
     }
 
     /**
      * deposit an amount in my account
      * @param amount the amount that i want deposit
      */
-    public void deposit(Double amount) {
-        this.balance += amount;
+    public void deposit(Amount amount) {
+        this.balance.depositAmount(amount);
     }
 
     public Double getBalance() {
-        return this.balance;
+        return this.balance.getBalance();
     }
 }
