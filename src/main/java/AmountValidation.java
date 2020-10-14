@@ -1,7 +1,7 @@
 public class AmountValidation {
 
-    private static final String AMOUNT_INCORRECT_MESSAGE = "Your amount is incorrect";
-    private static final String AMOUNT_GREATER_THEN_BALANCE_MESSAGE = "Your amount is greater then your balance";
+    public static final String AMOUNT_INCORRECT_MESSAGE = "Your amount is incorrect";
+    public static final String AMOUNT_GREATER_THEN_BALANCE_MESSAGE = "Your amount is greater then your balance";
 
     private static final AmountValidation amountValidation = new AmountValidation();
     public static AmountValidation getInstance() {
