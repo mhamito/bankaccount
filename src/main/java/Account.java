@@ -20,7 +20,7 @@ public class Account {
      * @param amount the amount that i want deposit
      */
     public void deposit(Amount amount) {
-        amountValidation.checkIfAmountIsNegative(amount.getCurrentAmount());
+        amountValidation.checkIfAmountIsNegative(amount);
         OperationType operationType = OperationType.DEPOSIT;
         this.balance.add(amount);
         accountStatements.add(new AccountStatement(operationType, LocalDateTime.now(), amount.getCurrentAmount(), this.balance.getCurrentAmount()));
@@ -31,8 +31,8 @@ public class Account {
      * @param amount the amount that i want withdrawal
      */
     public void withdrawal(Amount amount) {
-        amountValidation.checkIfAmountIsNegative(amount.getCurrentAmount());
-        amountValidation.checkIfBalanceIsSufficient(balance.getCurrentAmount(), amount.getCurrentAmount());
+        amountValidation.checkIfAmountIsNegative(amount);
+        amountValidation.checkIfBalanceIsSufficient(balance, amount);
         OperationType operationType = OperationType.WITHDRAWAL;
         this.balance.subtract(amount);
         accountStatements.add(new AccountStatement(operationType, LocalDateTime.now(), amount.getCurrentAmount(), this.balance.getCurrentAmount()));

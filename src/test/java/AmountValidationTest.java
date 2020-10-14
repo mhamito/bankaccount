@@ -9,19 +9,19 @@ public class AmountValidationTest {
 
     @Test
     public void should_throw_exception_when_the_amount_is_negative() {
-        String errorMessage = Assertions.assertThrows(RuntimeException.class, () -> amountValidation.checkIfAmountIsNegative(-200)).getMessage();
+        String errorMessage = Assertions.assertThrows(RuntimeException.class, () -> amountValidation.checkIfAmountIsNegative(new Amount(-200))).getMessage();
         Assertions.assertEquals(amountIncorrectMessage, errorMessage);
     }
 
     @Test
     public void should_throw_exception_when_the_amount_is_equal_to_zero() {
-        String errorMessage = Assertions.assertThrows(RuntimeException.class, () -> amountValidation.checkIfAmountIsNegative(0)).getMessage();
+        String errorMessage = Assertions.assertThrows(RuntimeException.class, () -> amountValidation.checkIfAmountIsNegative(new Amount(0))).getMessage();
         Assertions.assertEquals(amountIncorrectMessage, errorMessage);
     }
 
     @Test
     public void should_throw_exception_when_the_amount_is_greater_then_balance() {
-        String errorMessage = Assertions.assertThrows(RuntimeException.class, () -> amountValidation.checkIfBalanceIsSufficient(300, 500)).getMessage();
+        String errorMessage = Assertions.assertThrows(RuntimeException.class, () -> amountValidation.checkIfBalanceIsSufficient(new Amount(300), new Amount(500))).getMessage();
         Assertions.assertEquals(amountGreaterThenBalanceMessage, errorMessage);
     }
 }
