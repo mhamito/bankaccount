@@ -6,11 +6,10 @@ public class PrintStatements {
 
     public PrintStatements(){}
 
-    public void print(Account account) {
+    public void print(Client client, List<AccountStatement> accountStatements) {
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
-        System.out.println("account statement of " + account.getClient().getFirstName() + " " + account.getClient().getLastName());
+        System.out.println("account statement of " + client.getFirstName() + " " + client.getLastName());
         System.out.println("Operation |  Date of operation  |  Amount  |  Balance  |");
-        List<AccountStatement> accountStatements = account.getAccountStatements();
         Collections.reverse(accountStatements);
         accountStatements.forEach(accountStatement -> {
             System.out.println(accountStatement.getOperationType() + " | " + accountStatement.getDate() + " | " + decimalFormat.format(accountStatement.getAmount().getCurrentAmount()) + " € | " + decimalFormat.format(accountStatement.getBalance().getCurrentAmount()) + " €");

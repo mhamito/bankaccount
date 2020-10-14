@@ -19,7 +19,7 @@ public class Main {
         accountSarah.withdrawal(new Amount(400));
 
 
-        printStatements.print(accountLionel);
-        printStatements.print(accountSarah);
+        printStatements.print(lionel, accountLionel.getAccountStatements());
+        printStatements.print(sarah, accountSarah.getAccountStatements());
     }
 }
