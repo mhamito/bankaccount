@@ -10,21 +10,21 @@ public class AmountValidation {
 
     /**
      * check if the amount that i want deposit in my account is negative
-     * @param amount the amount that i want deposit in my account
+     * @param money the amount that i want deposit in my account
      */
-    public void checkIfAmountIsNegative(Amount amount) {
-        if(amount.getCurrentAmount() < 0) {
+    public void checkIfAmountIsNegative(double money) {
+        if(money < 0) {
             throw new RuntimeException(AMOUNT_INCORRECT_MESSAGE);
         }
     }
 
     /**
      * check if the amount that i want withdrawal from my account is greater then my balance
-     * @param amount the amount that i want deposit or withdrawal from my account
-     * @param balance the balance of my account
+     * @param currentAmount the balance of my account
+     * @param money the amount that i want deposit or withdrawal from my account
      */
-    public void checkIfBalanceIsSufficient (Amount amount, Amount balance) {
-        if(balance.getCurrentAmount() < amount.getCurrentAmount()) {
+    public void checkIfBalanceIsSufficient (double currentAmount, double money) {
+        if( currentAmount < money ) {
             throw new RuntimeException(AMOUNT_GREATER_THEN_BALANCE_MESSAGE);
         }
     }

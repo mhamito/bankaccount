@@ -12,7 +12,7 @@ public class Account {
      * @param amount the amount that i want deposit
      */
     public void deposit(Amount amount) {
-        amountValidation.checkIfAmountIsNegative(amount);
+        amountValidation.checkIfAmountIsNegative(amount.getCurrentAmount());
         this.balance.add(amount);
     }
 
@@ -21,8 +21,8 @@ public class Account {
      * @param amount the amount that i want withdrawal
      */
     public void withdrawal(Amount amount) {
-        amountValidation.checkIfAmountIsNegative(amount);
-        amountValidation.checkIfBalanceIsSufficient(amount, balance);
+        amountValidation.checkIfAmountIsNegative(amount.getCurrentAmount());
+        amountValidation.checkIfBalanceIsSufficient(balance.getCurrentAmount(), amount.getCurrentAmount());
         this.balance.subtract(amount);
     }
 
