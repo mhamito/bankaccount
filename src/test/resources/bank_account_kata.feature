@@ -10,3 +10,8 @@ Feature: Bank account kata
     Given I have some money in my account
     When I try to deposit a negative amount in my account
     Then I should be told "Your amount is incorrect"
+
+  Scenario: withdrawal an amount from my account
+    Given I have some money in my account
+    When I withdrawal an amount from my account
+    Then My balance must decrease by the amount deposited

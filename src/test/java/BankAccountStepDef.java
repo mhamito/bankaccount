@@ -33,4 +33,14 @@ public class BankAccountStepDef {
     public void iShouldBeTold(String arg0) {
         Assertions.assertEquals(errorMessage, this.errorMessage);
     }
+
+    @When("I withdrawal an amount from my account")
+    public void iWithdrawalAnAmountFromMyAccount() {
+        account.withdrawal(300.0);
+    }
+
+    @Then("My balance must decrease by the amount deposited")
+    public void myBalanceMustDecreaseByTheAmountDeposited() {
+        Assertions.assertEquals(700.0, account.getBalance());
+    }
 }
