@@ -1,12 +1,12 @@
 public class Amount {
 
-    private Double currentAmount;
+    private double currentAmount;
 
     public Amount() {
         this.currentAmount = 0.0;
     }
 
-    public Amount(Double money) {
+    public Amount(double money) {
         this.currentAmount = money;
     }
 
