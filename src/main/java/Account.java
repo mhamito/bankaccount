@@ -4,11 +4,13 @@ import java.util.List;
 
 public class Account {
 
+    private final Client client;
     private final List<AccountStatement> accountStatements;
     private final Amount balance;
     private final AmountValidation amountValidation = AmountValidation.getInstance();
 
-    public Account() {
+    public Account(Client client) {
+        this.client = client;
         this.accountStatements = new ArrayList<>();
         this.balance = new Amount();
     }
@@ -41,4 +43,6 @@ public class Account {
     }
 
     public List<AccountStatement> getAccountStatements() { return this.accountStatements; }
+
+    public Client getClient() { return this.client; }
 }

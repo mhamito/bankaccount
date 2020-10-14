@@ -6,11 +6,12 @@ import org.junit.jupiter.api.Assertions;
 public class BankAccountStepDef {
 
     private Account account;
+    private final Client client = new Client("client1", "Thomas", "Durand");
     private String errorMessage;
 
     @Given("I have some money in my account")
     public void iHaveSomeMoneyInMyAccount() {
-        account = new Account();
+        account = new Account(client);
         account.deposit(new Amount(1000.0));
     }
 
