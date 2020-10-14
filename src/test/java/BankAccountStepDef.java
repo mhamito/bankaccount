@@ -36,7 +36,7 @@ public class BankAccountStepDef {
 
     @When("I withdrawal an amount from my account")
     public void iWithdrawalAnAmountFromMyAccount() {
-        account.withdrawal(300.0);
+        account.withdrawal(new Amount(300.0));
     }
 
     @Then("My balance must decrease by the amount deposited")

@@ -12,5 +12,7 @@ public class Amount {
 
     public void add(Amount amount) { this.currentAmount += amount.getCurrentAmount(); }
 
+    public void subtract(Amount amount) { this.currentAmount -= amount.getCurrentAmount() ;}
+
     public Double getCurrentAmount() { return this.currentAmount; }
 }

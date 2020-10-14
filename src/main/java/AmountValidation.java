@@ -11,7 +11,7 @@ public class AmountValidation {
      * check if the amount that i want deposit in my account is negative
      * @param amount the amount that i want deposit in my account
      */
-    public void checkIfAmountIsNegativeOrNull (Amount amount) {
+    public void checkIfAmountIsNegative(Amount amount) {
         if(amount.getCurrentAmount() < 0) {
             throw new RuntimeException(AMOUNT_INCORRECT_MESSAGE);
         }
